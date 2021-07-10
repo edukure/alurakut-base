@@ -1,5 +1,6 @@
 import Box from '../src/components/Box';
 import MainGrid from '../src/components/MainGrid';
+import { AlurakutMenu } from '../src/components/lib/AluraCommons';
 
 const ProfileSidebar = (propriedades) => {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
 
   return (
     <>
+      <AlurakutMenu />
       <MainGrid>
         <div className="profileArea" style={{ gridArea: 'profileArea' }}>
           {/* <Box><img src={`https://github.com/${githubUser}.png`} style={{borderRadius: "8px"}}/></Box> */}
