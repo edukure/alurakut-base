@@ -43,13 +43,41 @@ export default function Home() {
           {/* <Box><img src={`https://github.com/${githubUser}.png`} style={{borderRadius: "8px"}}/></Box> */}
           <ProfileSidebar githubUser={githubUser} />
         </div>
+
         <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
           <Box>
             <h1 className="title">Bem vindo(a)</h1>
 
             <OrkutNostalgicIconSet />
           </Box>
+
+          <Box>
+            <h2 className="subTitle">O que você deseja fazer?</h2>
+            <form
+              onSubmit={function handleCriaComunidade(e) {
+                e.preventDefault();
+              }}>
+              <div>
+                <input
+                  placeholder="Qual vai ser o nome da sua comunidade?"
+                  name="title"
+                  aria-label="Qual vai ser o nome da sua comunidade?"
+                  type="text"
+                />
+              </div>
+
+              <div>
+                <input
+                  placeholder="Coloque uma URL para usarmos de capa"
+                  name="image"
+                  aria-label="Coloque uma URL para usarmos de capa"
+                />
+              </div>
+              <button>Criar Comunidade</button>
+            </form>
+          </Box>
         </div>
+
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">Pessoas Favoritas ({pessoasFavoritas.length})</h2>
