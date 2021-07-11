@@ -25,6 +25,28 @@ const ProfileSidebar = (propriedades) => {
   );
 };
 
+function ProfileRelationsBox(propriedades) {
+  return (
+    <ProfileRelationsBoxWrapper>
+      <h2 className="smallTitle">
+        {propriedades.title} ({propriedades.items.length})
+      </h2>
+      <ul>
+        {/* {seguidores.map((itemAtual) => {
+        return (
+          <li key={itemAtual}>
+            <a href={`/users/${itemAtual}`}>
+              <img src={`https://github.com/${itemAtual}.png`} />
+              <span>{itemAtual}</span>
+            </a>
+          </li>
+        );
+      })} */}
+      </ul>
+    </ProfileRelationsBoxWrapper>
+  );
+}
+
 export default function Home() {
   const githubUser = 'edukure';
 
@@ -44,6 +66,8 @@ export default function Home() {
       image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg',
     },
   ]);
+
+  const [seguidores, setSeguidores] = React.useState([]);
 
   return (
     <>
@@ -101,6 +125,7 @@ export default function Home() {
         </div>
 
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+          <ProfileRelationsBox title="Seguidores" items={seguidores}/>
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">Pessoas Favoritas ({pessoasFavoritas.length})</h2>
             <ul>
